@@ -30,14 +30,20 @@ $(document).ready(function() {
       JdvEspacos(1, 5, 9) || JdvEspacos(3, 5, 7)
     ) {
       /* Printa o vencedor */
-      $("#JDV-jogador-resultado").prepend("<h1>O " + vencedor + "° jogador venceu! </h1>");
+      if (vencedor == 1) {
+        $("#JDV-jogador-resultado").prepend("<h1>X ganhou!</h1>");
+      } else {
+        $("#JDV-jogador-resultado").prepend("<h1>O ganhou!</h1>");
+      }
       
       /* Impede de clicar nos espaços quando acabar o jogo */
       $(".espaço").off("click");
     }
   }
 
+  $("#JDV-jogador").text("Vez do jogador X");
 
+  contadorVez = 1
    /* Função para dizer a vez do Jogador */
    $(".espaço").click(function() {
     let bg = $(this).text();
@@ -51,10 +57,38 @@ $(document).ready(function() {
         jogador = 1;
       }
 
-      $("#JDV-jogador").text("Vez do " + jogador + "° jogador ");
       vez = (vez == 1 ? 2 : 1);
       Verificar();
+      contadorVez += 1;
     }
+    
+
+    /* Serve para printar quando der Velha! */
+    if (contadorVez >= 10 && ! vencedor) {
+      $("#JDV-jogador-resultado").prepend("<h1>Velha!</h1>");
+
+      $(".espaço").off("click");
+    }
+
+
+    /* Serve para printar a vez do jogador + quando o jogo acabar*/
+    if (contadorVez <= 9 && ! vencedor ) {
+      if (jogador == 1) {
+        $("#JDV-jogador").text("Vez do jogador X");
+      } else {
+        $("#JDV-jogador").text("Vez do jogador O");
+      }
+      
+    } else {
+      $("#JDV-jogador").text("Jogo acabou!");
+    }
+
   });
+  
+  /* Serve para reiniciar o GAME*/
+  $(document).on('click', '#JDV-reiniciar', function(){
+    window.location.reload();
+    history.go(0);
+  })
 
 });
