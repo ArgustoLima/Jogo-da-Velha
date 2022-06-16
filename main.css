@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap');
+
+body {
+  font-size: 100%;
+  background: linear-gradient(75deg, #70b2db 16.62%, #c88ec8 85.61%);
+  background-attachment: fixed;
+  font-family: 'Sarala', sans-serif;
+  
+}
+
+#JDV-header {
+  padding-top: 150px;
+  padding-bottom: 30px;
+  font-family: 'Righteous', cursive;
+  font-size: 62px;
+}
+
+.JDV {
+  display: flex;
+  justify-content: center;
+  font-size: 42px;
+}
+
+.JDV-main {
+  border-top: 1px solid #FFF2E7;
+  border-bottom: 1px solid #FFF2E7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.espaço {
+  width: 120px;
+  height: 120px;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 0px;
+}
+
+.espaço:hover {
+  background-color: #ffffff00;
+}
+
+#JDV-Espaços-Linha01 {
+  display: flex;
+  flex-direction: row;
+}
+
+#JDV-Espaços-Linha02 {
+  display: flex;
+  flex-direction: row;
+}
+
+#JDV-Espaços-Linha03 {
+  display: flex;
+  flex-direction: row;
+}
+
+#JDV-jogador {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #FFF2E7;
+  display: flex;
+  justify-content: center;
+}
+
+#JDV-jogador-resultado {
+  display: flex;
+  justify-content: center;
+  font-size: 46px;
+  font-weight: bold;
+  padding-top: 30px;
+}
+
+#rodape {
+  padding-top: 75px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
